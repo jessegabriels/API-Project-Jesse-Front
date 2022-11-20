@@ -8,7 +8,8 @@
     <div x-data="{
         responsedata: null,
         async getDay() {
-            this.responsedata = await (await fetch('https://project-service-jessegabriels.cloud.okteto.net/meeting/day'));
+            this.responsedata = await (await fetch('https://project-service-jessegabriels.cloud.okteto.net/meeting/day')).json();
+            console.log(data);
         }
     }" x-init="getDay">
         <button x-on:click="getDay">Get measurements of today</button>
@@ -17,7 +18,8 @@
     <div x-data="{
         responsedata: null,
         async getWeek() {
-            this.responsedata = await (await fetch('https://project-service-jessegabriels.cloud.okteto.net/meeting/week'));
+            this.responsedata = await (await fetch('https://project-service-jessegabriels.cloud.okteto.net/meeting/week')).json();
+            console.log(data);
         }
     }" x-init="getWeek">
         <button x-on:click="getWeek">Get measurements of the week</button>
